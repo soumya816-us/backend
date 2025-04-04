@@ -35,7 +35,7 @@ pipeline {
             steps {
 
                     sh """
-                    docker build -t soumya081693/backend:${appVersion}
+                    docker build -t soumya081693/backend:${appVersion} .
                     docker images
                     """
                     
