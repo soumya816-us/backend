@@ -5,7 +5,6 @@ pipeline {
     options{
         timeout(time: 30, unit: 'MINUTES')
         disableConcurrentBuilds()
-        //retry(1)
     }
     environment {
         DEBUG = 'true'
