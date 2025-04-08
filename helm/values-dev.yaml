@@ -1,4 +1,4 @@
-ConfigMap:
+configMap:
   db_host: expense-dev.ce9es6eksvpm.us-east-1.rds.amazonaws.com
 deployment:
   #version: 1.0.0
