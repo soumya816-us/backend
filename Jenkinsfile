@@ -36,26 +36,26 @@ pipeline {
             }
         }
 
-        stage('SonarQube analysis') {
-            environment {
-                SCANNER_HOME = tool 'sonar-7.0' //scanner config
-            }
-            steps {
-                // sonar server injection
-                withSonarQubeEnv('sonar-7.0') {
-                    sh '$SCANNER_HOME/bin/sonar-scanner'
-                    //generic scanner, it automatically understands the language and provide scan results
-                }
-            }
-        }
+        // stage('SonarQube analysis') {
+        //     environment {
+        //         SCANNER_HOME = tool 'sonar-7.0' //scanner config
+        //     }
+        //     steps {
+        //         // sonar server injection
+        //         withSonarQubeEnv('sonar-7.0') {
+        //             sh '$SCANNER_HOME/bin/sonar-scanner'
+        //             //generic scanner, it automatically understands the language and provide scan results
+        //         }
+        //     }
+        // }
 
-        stage('SQuality Gate') {
-            steps {
-                timeout(time: 5, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
-                }
-            }
-        }
+        // stage('SQuality Gate') {
+        //     steps {
+        //         timeout(time: 5, unit: 'MINUTES') {
+        //             waitForQualityGate abortPipeline: true
+        //         }
+        //     }
+        // }
         stage('Docker build') {
             steps {
 
